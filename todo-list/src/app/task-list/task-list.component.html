@@ -1,0 +1,28 @@
+<app-home></app-home>
+<div class="container pt-5">
+    <h2 class="d-flex justify-content-center">Add Task</h2>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <th scope="row">{{ task.id }}</th>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.priority }}</td>
+        <td>{{ task.due_date }}</td>
+        <td>{{ task.created_at }}</td>
+        <td><button class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
